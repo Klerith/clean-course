@@ -12,8 +12,16 @@
         console.log({ id });
     }
     
+
+    interface movieProperties{ 
+        cast: string[]
+        description: string,
+        rating: number, 
+        title: string, 
+    }
     // Crear una película
-    function createMovie(title: string, description: string, rating: number, cast: string[] ) {
+    function createMovie({ title, description, rating, cast }: movieProperties  ) {
+
         console.log({ title, description, rating, cast });
     }
 
