@@ -1,5 +1,7 @@
 import './style.css'
 import './clean-code/07-classes-b';
+import './code-smells/02-low-coupling';
+
 const app = document.querySelector<HTMLDivElement>('#app')!
 
 app.innerHTML = `
