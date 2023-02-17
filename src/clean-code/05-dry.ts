@@ -28,7 +28,7 @@ class Product {
     
     toString() {
         
-        if ( !this.isProductReady ) return;
+        if ( !this.isProductReady() ) return;
         
 
         return `${ this.name } (${ this.price }), ${ this.size }`
