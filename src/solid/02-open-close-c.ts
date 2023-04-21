@@ -1,5 +1,6 @@
 // import axios from 'axios';
 
+// Clase adaptadora para librerías de terceros
 
 export class HttpClient {
 

@@ -24,7 +24,7 @@
 
 
         sendEmail( emailList: string[], template: 'to-clients' | 'to-admins' ) {
-            console.log('Enviando correo a los clientes', template );
+            console.log('Enviando correo a los clientes', emailList, template );
         }
 
     }
@@ -37,18 +37,18 @@
         private productService: ProductService;
         private mailer: Mailer;
 
-        constructor( productService: ProductService, mailer: Mailer ) {
+        constructor( productService: ProductService, mailer: Mailer ) { // Inyectar dependencias en mi block
             this.productService = productService;
             this.mailer = mailer;
         }
 
     
         loadProduct( id: number ) {
-            this.productService.getProduct( id );
+            this.productService.getProduct( id ); // así le dejo la responsabilidad a de llamada a productService 
         }
     
         saveProduct( product: Product ) {
-            this.productService.saveProduct( product );
+            this.productService.saveProduct( product ); // así le dejo la responsabilidad a productService  de guardar en DDBB
         }
     
         notifyClients() {
@@ -72,19 +72,12 @@
     const mailer = new Mailer();
 
 
-    const productBloc = new ProductBloc( productService, mailer );
+    const productBloc = new ProductBloc( productService, mailer ); // inyectamos dependencias. Para testear simplemente hacemos mock de productService y mailer
     const cartBloc = new CartBloc();
 
     productBloc.loadProduct(10);
     productBloc.saveProduct({ id: 10, name: 'OLED TV' });
     productBloc.notifyClients();
     cartBloc.addToCart(10);
-
-
-
-
-
-
-
 
 })();
