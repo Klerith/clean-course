@@ -37,7 +37,7 @@
 
     function workingSteps() {
 
-        if( !isFirstStepWorking) return 'First step broken.';
+        if(!isFirstStepWorking) return 'First step broken.';
         if(!isSecondStepWorking)  return 'Second step broken.';
         if(!isThirdStepWorking) return 'Third step broken.';
         if(!isFourthStepWorking ) return 'Fourth step broken.';
