@@ -14,9 +14,9 @@ class Prouct{
                 case 'number':
                     if ((<number>this[key])<=0)throw Error (`${key} is zero`);
                     break;
-             case 'number':
-                if ((<string>this[key]).length<=0)throw Error (`${key} is empty`);
-                break;
+                case 'string':
+                    if ((<string>this[key]).length<=0)throw Error (`${key} is empty`);
+                    break;
             }
 
         }
